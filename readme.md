@@ -29,7 +29,7 @@ Nothing for now. It's the equivalent of a non-working "static" HTML page. Will b
 
 * Sublime Text 3 editor
 * Firefox (Nightly)
-* LESS & SASS for quicker initial setup
+* EMMET & SASS & LESS & SCSS and stuffs, for quicker initial setup
 * Lots of coffee
 
 ## Contributing
