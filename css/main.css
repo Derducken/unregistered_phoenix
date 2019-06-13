@@ -1,0 +1,120 @@
+//Global Variables:
+
+
+
+body {
+
+}
+
+#core_fullbox {}
+
+#header {}
+
+#site_id {}
+
+#site_logo {
+
+	img {}
+	a {}
+	h1 {}
+}
+
+#site_top_menu {
+
+	ul {}
+	li {}
+	a {}
+}
+
+#site_search {}
+
+#search_boxen {}
+
+#search_button {
+
+	img {}
+	a {}
+}
+
+#site_main_menu {}
+
+#main_menu_normal_entries {
+
+	ul {}
+	li {}
+	a {}
+}
+
+#main_menu_hubs {}
+
+.menu_item {
+
+	a {}
+}
+
+.hub_title {}
+
+.hub_excerpt {}
+
+.hub_image {}
+
+#core_mainsite {}
+
+#core_slideshow {}
+
+.index_post {
+
+	a {}
+}
+
+.index_post_title {}
+
+.index_post_excerpt {}
+
+.index_post_category {}
+
+.index_post_image {}
+
+#core_selected_hub_posts {}
+
+.index_post {
+
+	a {}
+}
+
+.index_post_title {}
+
+.index_post_excerpt {}
+
+.index_post_category {}
+
+.index_post_image {}
+
+#core_first_page_postbox {}
+
+.index_post {
+
+	a {}
+}
+
+.index_post_title {}
+
+.index_post_excerpt {}
+
+.index_post_category {}
+
+.index_post_image {}
+
+#sidebar {}
+
+.widget {}
+
+.widget_title {}
+
+.widget_contents {}
+
+#footer {}
+
+#footer_left {}
+
+#footer_right {}

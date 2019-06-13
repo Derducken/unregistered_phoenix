@@ -1,0 +1,176 @@
+//Global Variables:
+$core_colors_back: rgba(225,225,225,1);
+$core_colors_main: rgba(0,0,0,1);
+$core_colors_paint: rgba(255,0,0,1);
+$core_colortest1: rgba(110,110,250,0.5);
+$core_colortest2: rgba(110,250,110,0.5);
+$core_colortest3: rgba(250,110,110,0.5);
+
+//Mixins:
+@mixin flpr {
+	position: relative;
+	float: left;
+}
+
+@mixin mpz {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin fixedbg {
+	background-image:url(img/optimized_walls/general/pexels-photo.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
+//Main:
+body {
+	background-color: $core_colors_back;
+	color: $core_colors_main;
+	@include fixedbg;
+	min-height:100%;
+  min-width:100%;
+}
+
+#core_fullbox {
+	@include mpz;
+	background-color: $core_colortest1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#header {
+	background-color: $core_colortest2;
+	@include flpr;
+	width: 100%;
+	height: 100px;
+}
+
+#site_id {
+	background-color: $core_colortest3;
+}
+
+#site_logo {
+
+	img {}
+	a {}
+	h1 {}
+}
+
+#site_top_menu {
+
+	ul {}
+	li {
+		@include flpr;
+	}
+	a {}
+}
+
+#site_search {}
+
+#search_boxen {}
+
+#search_button {
+
+	img {}
+	a {}
+}
+
+#site_main_menu {
+
+	#main_menu_normal_entries {
+
+		ul {}
+		li {
+			@include flpr;
+		}
+		a {}
+	}
+
+	#main_menu_hubs {}
+
+	.menu_item {
+		@include flpr;
+
+		a {}
+	}
+
+	.hub_title {}
+
+	.hub_excerpt {}
+
+	.hub_image {}
+}
+
+#core_mainsite {}
+
+#core_slideshow {
+
+	.index_post {
+		@include flpr;
+
+		a {}
+	}
+
+	.index_post_title {}
+
+	.index_post_excerpt {}
+
+	.index_post_category {}
+
+	.index_post_image {}
+
+	#core_selected_hub_posts {}
+
+	.index_post {
+		@include flpr;
+
+		a {}
+	}
+
+	.index_post_title {}
+
+	.index_post_excerpt {}
+
+	.index_post_category {}
+
+	.index_post_image {}
+}
+
+#core_first_page_postbox {
+
+	.index_post {
+		@include flpr;
+
+		a {}
+	}
+
+	.index_post_title {}
+
+	.index_post_excerpt {}
+
+	.index_post_category {}
+
+	.index_post_image {}
+}
+
+#sidebar {
+
+	.widget {
+		@include flpr;
+	}
+
+	.widget_title {}
+
+	.widget_contents {}
+}
+
+#footer {}
+
+#footer_left {}
+
+#footer_right {}
