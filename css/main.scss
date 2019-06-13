@@ -71,14 +71,29 @@ body {
 
 #site_id {
 	background-color: $core_colortest3;
+	@include flpr;
+	width: 50%;
+	height: 100px;
+
+	#site_logo, h1 {
+		@include mpz;
+		position: absolute;
+		left: 0;
+		width: 50%;
+		height: 50%;
 }
+	#site_logo {
+		top: 0;
+		img {}
+	}
 
-#site_logo {
-
-	img {}
 	a {}
-	h1 {}
+	h1 {
+		bottom: 0;
+	}
 }
+
+
 
 #site_top_menu {
 	@include bordertb;
