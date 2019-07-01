@@ -19,7 +19,7 @@ Load the main index.html into your browser to see how everything's looking up to
 
 None for now. We'll see if anything extra is needed. I'll try to keep everything simple and avoid using *any* addons if it isn't really necessary.
 
-This *will* mean that, in the long run, I consider better (and the theme will demand) editing some files to change some parameters manually instead of having to add needless fluff on a WP instalation, needlesly draging things down.
+This *does* mean that, in the long run, I consider better (and the theme will demand) editing some files to change some parameters manually instead of having to add extra fluff on a WP instalation, needlesly draging things down.
 
 ### Installing
 
@@ -28,10 +28,13 @@ Nothing for now. It's the equivalent of a non-working "static" HTML page. Will b
 ## Built With
 
 * Sublime Text 3 editor
+* Atom editor
 * Firefox (Nightly)
 * EMMET & SASS & LESS & SCSS and stuffs, for quicker initial setup
 * Bits and pieces from HTML5 Boilerplate.
+* Font Awesome
 * Lots of coffee
+* Pure CSS slideshow idea from https://www.youtube.com/watch?v=z74ExMz-cWU (...but tweaked to fit the rest of our theme).
 
 ## Contributing
 
@@ -94,7 +97,15 @@ The default "test" images are from Pexels. Specifically (and since I like acknow
 
 ## Version Changes
 
-### 0.002 (this):
+### 0.003:
+Design for the first page is almost fully done, effects and all. While at it, I "modularized" the SCSS code, so theming the rest of the pages should be quite simpler and a-lot faster.
+
+Now, on to single pages.
+
+#### Known problems:
+The design crashed my Chrome Canary. Maybe it's because I use a bunch of huge images for testing. Maybe not. It's not time for that kind of problem-solving. Plus, I haven't checked it at-all in *any* other browser or older versions. That will come at the end, when building the Media Queries to "tune" everything for different screens and devices.
+
+### 0.002:
 "Brought in" and "spliced" HTML Boilerplate with existing structure.
 
 * Changed name to Core Phoenix. I'll be honest: purely because muscle memory forces me to type "core this, core that". I've worked privately on my "Core" series of themes for half a decade, so... Yeah.

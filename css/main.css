@@ -1,120 +1,191 @@
-//Global Variables:
-
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+::selection {
+  color: rgba(100, 250, 250, 0.9) !important;
+  background: rgba(50, 50, 70, 0.5) !important;
+}
 
 body {
-
+  background-color: #e1e1e1;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  background-image: url(img/optimized_walls/general/pexels-photo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-#core_fullbox {}
-
-#header {}
-
-#site_id {}
-
-#site_logo {
-
-	img {}
-	a {}
-	h1 {}
+#core_fullbox {
+  background-color: rgba(225, 225, 225, 0.7);
+  position: relative;
+  float: left;
+  width: 50%;
+  margin: 0 25%;
+  padding: 0;
+}
+#core_fullbox #header {
+  background-color: rgba(225, 225, 225, 0.6);
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100px;
+}
+#core_fullbox #header #site_id {
+  background-color: rgba(225, 225, 225, 0.9);
+  position: relative;
+  float: left;
+  width: 25%;
+  min-width: 250px;
+  max-width: 300px;
+}
+#core_fullbox #header #site_id a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#core_fullbox #header #site_id a #site_logo, #core_fullbox #header #site_id a h1 {
+  position: relative;
+  float: left;
+}
+#core_fullbox #header #site_id a h1 {
+  margin: 0;
+  padding: 0;
+}
+#core_fullbox #header #top_menu {
+  position: relative;
+  float: right;
+}
+#core_fullbox #header #top_menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#core_fullbox #header #top_menu ul li {
+  position: relative;
+  float: right;
+  -webkit-box-shadow: inset 2px -3px 12px #4d4d4d;
+  -moz-box-shadow: inset 2px -3px 12px #4d4d4d;
+  box-shadow: inset 2px -3px 12px #4d4d4d;
+  transition: color, background-color, 0.5s;
+  width: 75px;
+  height: 35px;
+  padding: 0;
+  margin: 0 0 0 0;
+  overflow: hidden;
+}
+#core_fullbox #header #top_menu ul li a {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -ms-border-top-left-radius: 0;
+  -ms-border-top-right-radius: 0;
+  -ms-border-bottom-right-radius: 0;
+  -ms-border-bottom-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  -moz-border-top-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  display: block;
+  transition: color, background-color, font-size, line-height, 0.5s;
+  color: rgba(225, 225, 225, 0.5);
+  font-size: 2em;
+  line-height: 1.1em;
+  text-align: center;
+}
+#core_fullbox #header #top_menu ul li a:hover {
+  color: #e1e1e1;
+  font-size: 2.2em;
+  line-height: 1em;
+}
+#core_fullbox #header #top_menu ul li .social_fb {
+  background-color: #686868;
+}
+#core_fullbox #header #top_menu ul li .social_fb:hover {
+  background-color: #3a5795;
+}
+#core_fullbox #header #top_menu ul li .social_twitter {
+  background-color: #84a6bf;
+}
+#core_fullbox #header #top_menu ul li .social_twitter:hover {
+  background-color: #55acee;
+}
+#core_fullbox #header #top_menu ul li .social_rss {
+  background-color: #c58560;
+}
+#core_fullbox #header #top_menu ul li .social_rss:hover {
+  background-color: #fb7629;
+}
+#core_fullbox #header #top_menu ul li .social_mail {
+  background-color: #a58380;
+}
+#core_fullbox #header #top_menu ul li .social_mail:hover {
+  background-color: #db5649;
+}
+#core_fullbox #header #site_search {
+  position: relative;
+  float: right;
+  -webkit-box-shadow: inset 2px -3px 12px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: inset 2px -3px 12px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 2px -3px 12px rgba(0, 0, 0, 0.7);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 40px;
+  -ms-border-top-left-radius: 0;
+  -ms-border-top-right-radius: 0;
+  -ms-border-bottom-right-radius: 0;
+  -ms-border-bottom-left-radius: 40px;
+  -moz-border-top-left-radius: 0;
+  -moz-border-top-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  -moz-border-bottom-left-radius: 40px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 40px;
+  width: 50px;
+  transition: color, background-color, 0.5s;
+  height: 35px;
+  padding: 0;
+  margin: 0 0 0 5px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+#core_fullbox #header #site_search:active {
+  width: 300px;
+}
+#core_fullbox #header #site_menu #main_menu ul {
+  list-style: none;
+}
+#core_fullbox #header #site_menu #main_menu ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#core_fullbox #header #site_menu #hubs_menu {
+  position: relative;
+  float: right;
+  width: 100%;
+}
+#core_fullbox #mainsite {
+  position: relative;
+  float: left;
+}
+#core_fullbox #sidebar {
+  position: relative;
+  float: right;
+  width: 100%;
+}
+#core_fullbox #footer {
+  position: relative;
+  float: right;
+  width: 100%;
 }
 
-#site_top_menu {
-
-	ul {}
-	li {}
-	a {}
-}
-
-#site_search {}
-
-#search_boxen {}
-
-#search_button {
-
-	img {}
-	a {}
-}
-
-#site_main_menu {}
-
-#main_menu_normal_entries {
-
-	ul {}
-	li {}
-	a {}
-}
-
-#main_menu_hubs {}
-
-.menu_item {
-
-	a {}
-}
-
-.hub_title {}
-
-.hub_excerpt {}
-
-.hub_image {}
-
-#core_mainsite {}
-
-#core_slideshow {}
-
-.index_post {
-
-	a {}
-}
-
-.index_post_title {}
-
-.index_post_excerpt {}
-
-.index_post_category {}
-
-.index_post_image {}
-
-#core_selected_hub_posts {}
-
-.index_post {
-
-	a {}
-}
-
-.index_post_title {}
-
-.index_post_excerpt {}
-
-.index_post_category {}
-
-.index_post_image {}
-
-#core_first_page_postbox {}
-
-.index_post {
-
-	a {}
-}
-
-.index_post_title {}
-
-.index_post_excerpt {}
-
-.index_post_category {}
-
-.index_post_image {}
-
-#sidebar {}
-
-.widget {}
-
-.widget_title {}
-
-.widget_contents {}
-
-#footer {}
-
-#footer_left {}
-
-#footer_right {}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,209 @@
+//Global Variables:
+//______________________________________________________________________________
+$cback: rgba(225,225,225,1);
+$cfront: rgba(0,0,0,1);
+$cpaint: rgba(255,0,0,1);
+$core_colortest1: rgba(110,110,250,0.5);
+$core_colortest2: rgba(110,250,110,0.5);
+$core_colortest3: rgba(250,110,110,0.5);
+$main_font: 'Montserrat', sans-serif;
+
+// Post Category Colors
+$cCategory1: rgba(200,0,0,1);
+$cCategory2: rgba(0,200,0,1);
+$cCategory3: rgba(0,0,200,1);
+$cCategory4: rgba(200,200,0,1);
+$cCategory5: rgba(200,0,200,1);
+$cCategory6: rgba(0,200,200,1);
+$cCategory7: rgba(110,0,0,1);
+$cCategory8: rgba(0,110,0,1);
+$cCategory9: rgba(0,0,110,1);
+$cCategory10: rgba(110,110,0,1);
+$cCategory11: rgba(110,0,110,1);
+$cCategory12: rgba(0,110,110,1);
+
+::selection {
+    color:rgba(100,250,250,0.9) !important;
+    background:rgba(50,50,70,0.5) !important;
+}
+
+//Mixins:
+//______________________________________________________________________________
+
+@mixin acceler8 {
+  -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin cfb {
+	color: $cFront;
+	background-color: $cBack;
+}
+
+@mixin cbf {
+	color: $cBack;
+	background-color: $cFront;
+}
+
+@mixin tcfront($transparency_value: 0.5) {
+  color: transparentize($cfront, $transparency_value);
+}
+
+@mixin tcback($transparency_value: 0.5) {
+  color: transparentize($cback, $transparency_value);
+}
+
+@mixin tbfront($transparency_value: 0.5) {
+  background-color: transparentize($cfront, $transparency_value);
+}
+
+@mixin tbback($transparency_value: 0.5) {
+  background-color: transparentize($cback, $transparency_value);
+}
+
+@mixin flpr {
+	position: relative;
+	float: left;
+}
+
+@mixin frpr {
+	position: relative;
+	float: right;
+}
+
+@mixin mpz {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin fixedbg {
+	//background-image:url(img/optimized_walls/general/pexels-photo.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+@mixin bordertb ($top: 1px, $bottom: 1px, $color: 					transparentize($core_colors_main, 0.5)){
+	border-top: solid $top $color;
+	border-bottom: solid $bottom $color;
+}
+
+@mixin coreslice {
+	@include mpz;
+	@include flpr;
+	width: 100%;
+	height: auto;
+}
+
+@mixin wminmax ($maxwidth: auto, $maxheight: auto){
+  min-width: $maxwidth;
+  max-width: $maxheight;
+}
+
+@mixin absobox ($width: 100%, $height: 100%) {
+  position: absolute;
+  width: $width;
+  height: $height;
+}
+
+@mixin placebox ($top:auto, $right:auto, $bottom:auto, $left:auto, $width: auto, $height: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: $width;
+  height: $height;
+}
+
+@mixin floatbox ($width: 100%, $height: 100%, $floatpoint: left) {
+  position: relative;
+  width: $width;
+  height: $height;
+  float: $floatpoint;
+}
+
+@mixin fixbox ($top:auto, $right:auto, $bottom:auto, $left:auto, $width: 100%, $height: 100%) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: $width;
+  height: $height;
+}
+
+@mixin border-radius($radiustl, $radiustr, $radiusbr, $radiusbl) {
+          border-top-left-radius: $radiustl;
+          border-top-right-radius: $radiustr;
+          border-bottom-right-radius: $radiusbr;
+          border-bottom-left-radius: $radiusbl;
+          -ms-border-top-left-radius: $radiustl;
+          -ms-border-top-right-radius: $radiustr;
+          -ms-border-bottom-right-radius: $radiusbr;
+          -ms-border-bottom-left-radius: $radiusbl;
+          -moz-border-top-left-radius: $radiustl;
+          -moz-border-top-right-radius: $radiustr;
+          -moz-border-bottom-right-radius: $radiusbr;
+          -moz-border-bottom-left-radius: $radiusbl;
+          -webkit-border-top-left-radius: $radiustl;
+          -webkit-border-top-right-radius: $radiustr;
+          -webkit-border-bottom-right-radius: $radiusbr;
+          -webkit-border-bottom-left-radius: $radiusbl;
+}
+
+@mixin combined-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+    @include background-clip;
+    @include border-radius($topLeft, $topRight, $bottomRight, $bottomLeft);
+}
+
+@mixin borders($top, $right, $bottom, $left, $color) {
+    border-top: solid $top $color;
+    border-right: solid $right $color;
+    border-bottom: solid $bottom $color;
+    border-left: solid $left $color;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+	-webkit-box-shadow:inset $left $top $blur $color;
+	-moz-box-shadow:inset $left $top $blur $color;
+	box-shadow:inset $left $top $blur $color;
+	}
+	@else {
+	-webkit-box-shadow: $left $top $blur $color;
+	-moz-box-shadow: $left $top $blur $color;
+	box-shadow: $left $top $blur $color;
+	}
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin pcenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin background-clip {
+    background-clip: padding-box;
+}
