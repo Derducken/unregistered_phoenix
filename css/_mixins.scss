@@ -3,6 +3,7 @@
 $cback: rgba(225,225,225,1);
 $cfront: rgba(0,0,0,1);
 $cpaint: rgba(255,0,0,1);
+$links_color: rgba(140,140,225,0.9);
 $core_colortest1: rgba(110,110,250,0.5);
 $core_colortest2: rgba(110,250,110,0.5);
 $core_colortest3: rgba(250,110,110,0.5);
@@ -21,6 +22,36 @@ $cCategory9: rgba(0,0,110,1);
 $cCategory10: rgba(110,110,0,1);
 $cCategory11: rgba(110,0,110,1);
 $cCategory12: rgba(0,110,110,1);
+$cCategory13: rgba(200,100,0,1);
+$cCategory14: rgba(200,0,100,1);
+$cCategory15: rgba(100,200,0,1);
+$cCategory16: rgba(0,200,100,1);
+$cCategory17: rgba(100,0,200,1);
+$cCategory18: rgba(0,100,200,1);
+
+
+// Post Category Default Images
+$iCategory1: url(img/svg_icons/iconmonstr-facebook-icon.svg);
+$iCategory2: url(img/svg_icons/iconmonstr-infinity-3-icon.svg);
+$iCategory3: url(img/svg_icons/iconmonstr-tools-2-icon.svg);
+$iCategory4: url(img/svg_icons/iconmonstr-battery-7-icon.svg);
+$iCategory5: url(img/svg_icons/iconmonstr-crosshair-6-icon.svg);
+$iCategory6: url(img/svg_icons/iconmonstr-barcode-icon.svg);
+$iCategory7: url(img/svg_icons/iconmonstr-coffee-icon.svg);
+$iCategory8: url(img/svg_icons/iconmonstr-twitter-icon.svg);
+$iCategory9: url(img/svg_icons/iconmonstr-share-icon.svg);
+$iCategory10: url(img/svg_icons/iconmonstr-smiley-lips-sealed-icon.svg);
+$iCategory11: url(img/svg_icons/iconmonstr-network-6-icon.svg);
+$iCategory12: url(img/svg_icons/iconmonstr-computer-6-icon.svg);
+$iCategory13: url(img/svg_icons/iconmonstr-youtube-new-icon.svg);
+$iCategory14: url(img/svg_icons/iconmonstr-smiley-lol-icon.svg);
+$iCategory15: url(img/svg_icons/iconmonstr-smiley-lol-icon.svg);
+$iCategory16: url(img/svg_icons/iconmonstr-smiley-lol-icon.svg);
+$iCategory17: url(img/svg_icons/iconmonstr-smiley-lol-icon.svg);
+$iCategory18: url(img/svg_icons/iconmonstr-smiley-lol-icon.svg);
+
+
+
 
 ::selection {
     color:rgba(100,250,250,0.9) !important;
@@ -59,20 +90,20 @@ $cCategory12: rgba(0,110,110,1);
 	background-color: $cFront;
 }
 
-@mixin tcfront($transparency_value: 0.5) {
-  color: transparentize($cfront, $transparency_value);
+@mixin tcfront($t: 0.5) {
+  color: transparentize($cfront, $t);
 }
 
-@mixin tcback($transparency_value: 0.5) {
-  color: transparentize($cback, $transparency_value);
+@mixin tcback($t: 0.5) {
+  color: transparentize($cback, $t);
 }
 
-@mixin tbfront($transparency_value: 0.5) {
-  background-color: transparentize($cfront, $transparency_value);
+@mixin tbfront($t: 0.5) {
+  background-color: transparentize($cfront, $t);
 }
 
-@mixin tbback($transparency_value: 0.5) {
-  background-color: transparentize($cback, $transparency_value);
+@mixin tbback($t: 0.5) {
+  background-color: transparentize($cback, $t);
 }
 
 @mixin flpr {
@@ -98,9 +129,9 @@ $cCategory12: rgba(0,110,110,1);
 	background-attachment: fixed;
 }
 
-@mixin bordertb ($top: 1px, $bottom: 1px, $color: 					transparentize($core_colors_main, 0.5)){
-	border-top: solid $top $color;
-	border-bottom: solid $bottom $color;
+@mixin bordertb ($t: 1px, $b: 1px, $c: 					transparentize($core_colors_main, 0.5)){
+	border-top: solid $t $c;
+	border-bottom: solid $b $c;
 }
 
 @mixin coreslice {
@@ -110,85 +141,85 @@ $cCategory12: rgba(0,110,110,1);
 	height: auto;
 }
 
-@mixin wminmax ($maxwidth: auto, $maxheight: auto){
-  min-width: $maxwidth;
-  max-width: $maxheight;
+@mixin wminmax ($w: auto, $h: auto){
+  min-width: $w;
+  max-width: $h;
 }
 
-@mixin absobox ($width: 100%, $height: 100%) {
+@mixin absobox ($w: 100%, $h: 100%) {
   position: absolute;
-  width: $width;
-  height: $height;
+  width: $w;
+  height: $h;
 }
 
-@mixin placebox ($top:auto, $right:auto, $bottom:auto, $left:auto, $width: auto, $height: auto) {
+@mixin placebox ($t:auto, $r:auto, $b:auto, $l:auto, $w: auto, $h: auto) {
   position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  width: $width;
-  height: $height;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  width: $w;
+  height: $h;
 }
 
-@mixin floatbox ($width: 100%, $height: 100%, $floatpoint: left) {
+@mixin floatbox ($w: 100%, $h: 100%, $f: left) {
   position: relative;
-  width: $width;
-  height: $height;
-  float: $floatpoint;
+  width: $w;
+  height: $h;
+  float: $f;
 }
 
-@mixin fixbox ($top:auto, $right:auto, $bottom:auto, $left:auto, $width: 100%, $height: 100%) {
+@mixin fixbox ($t:auto, $r:auto, $b:auto, $l:auto, $w: 100%, $h: 100%) {
   position: fixed;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  width: $width;
-  height: $height;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  width: $w;
+  height: $h;
 }
 
-@mixin border-radius($radiustl, $radiustr, $radiusbr, $radiusbl) {
-          border-top-left-radius: $radiustl;
-          border-top-right-radius: $radiustr;
-          border-bottom-right-radius: $radiusbr;
-          border-bottom-left-radius: $radiusbl;
-          -ms-border-top-left-radius: $radiustl;
-          -ms-border-top-right-radius: $radiustr;
-          -ms-border-bottom-right-radius: $radiusbr;
-          -ms-border-bottom-left-radius: $radiusbl;
-          -moz-border-top-left-radius: $radiustl;
-          -moz-border-top-right-radius: $radiustr;
-          -moz-border-bottom-right-radius: $radiusbr;
-          -moz-border-bottom-left-radius: $radiusbl;
-          -webkit-border-top-left-radius: $radiustl;
-          -webkit-border-top-right-radius: $radiustr;
-          -webkit-border-bottom-right-radius: $radiusbr;
-          -webkit-border-bottom-left-radius: $radiusbl;
+@mixin border-radius($tl, $tr, $br, $bl) {
+          border-top-left-radius: $tl;
+          border-top-right-radius: $tr;
+          border-bottom-right-radius: $br;
+          border-bottom-left-radius: $bl;
+          -ms-border-top-left-radius: $tl;
+          -ms-border-top-right-radius: $tr;
+          -ms-border-bottom-right-radius: $br;
+          -ms-border-bottom-left-radius: $bl;
+          -moz-border-top-left-radius: $tl;
+          -moz-border-top-right-radius: $tr;
+          -moz-border-bottom-right-radius: $br;
+          -moz-border-bottom-left-radius: $bl;
+          -webkit-border-top-left-radius: $tl;
+          -webkit-border-top-right-radius: $tr;
+          -webkit-border-bottom-right-radius: $br;
+          -webkit-border-bottom-left-radius: $bl;
 }
 
-@mixin combined-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+@mixin combined-radius($tl, $tr, $br, $bl) {
     @include background-clip;
-    @include border-radius($topLeft, $topRight, $bottomRight, $bottomLeft);
+    @include border-radius($tl, $tr, $br, $bl);
 }
 
-@mixin borders($top, $right, $bottom, $left, $color) {
-    border-top: solid $top $color;
-    border-right: solid $right $color;
-    border-bottom: solid $bottom $color;
-    border-left: solid $left $color;
+@mixin borders($t:0, $r:0, $b:0, $l:0, $c: none) {
+    border-top: solid $t $c;
+    border-right: solid $r $c;
+    border-bottom: solid $b $c;
+    border-left: solid $l $c;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+@mixin box-shadow($t, $l, $blur, $spread, $color, $inset: false) {
 	@if $inset {
-	-webkit-box-shadow:inset $left $top $blur $color;
-	-moz-box-shadow:inset $left $top $blur $color;
-	box-shadow:inset $left $top $blur $color;
+	-webkit-box-shadow:inset $l $t $blur $spread $color;
+	-moz-box-shadow:inset $l $t $blur $spread $color;
+	box-shadow:inset $l $t $blur $spread $color;
 	}
 	@else {
-	-webkit-box-shadow: $left $top $blur $color;
-	-moz-box-shadow: $left $top $blur $color;
-	box-shadow: $left $top $blur $color;
+	-webkit-box-shadow: $l $t $blur $spread $color;
+	-moz-box-shadow: $l $t $blur $spread $color;
+	box-shadow: $l $t $blur $spread $color;
 	}
 }
 
@@ -207,3 +238,36 @@ $cCategory12: rgba(0,110,110,1);
 @mixin background-clip {
     background-clip: padding-box;
 }
+
+
+
+//Fade In Animation
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.fade-in {
+  opacity: 0;
+  /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  animation-duration: 0.5s; }

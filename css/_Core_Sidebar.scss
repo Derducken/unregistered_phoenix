@@ -1,0 +1,35 @@
+#sidebar {
+  @include floatbox(99%, auto, right);
+  @include tbfront(0.4);
+  @include tcback(0.3);
+  padding: 0.5%;
+
+  .widget {
+    @include tbfront(0.4);
+    @include floatbox(23%, auto, left);
+    @include combined-radius(15px, 15px, 10px, 10px);
+    min-height: 500px;
+    margin: 0 1%;
+    padding: 0;
+
+    .widget_contents,
+    .widget_title {
+      @include combined-radius(10px, 10px, 10px, 10px);
+    }
+
+    .widget_title {
+      @include floatbox(96%, auto, left);
+      @include tbfront(0.4);
+      margin: 0;
+      padding: 2%;
+      border-bottom: solid 2px transparentize($cback, .95);
+    }
+
+    .widget_contents {
+      @include floatbox(88%, auto, left);
+      @include tbfront(0.7);
+      margin: 2% 2% 0;
+      padding: 4%;
+    }
+  }
+}

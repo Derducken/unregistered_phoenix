@@ -1,0 +1,17 @@
+#footer {
+  @include floatbox(98%, auto);
+  @include tcback(0.3);
+  @include tbfront(0.4);
+  margin: 10px auto 0;
+  padding: 1%;
+
+  #footer_left {
+    @include floatbox(50%, auto, left);
+    text-align: left;
+  }
+
+  #footer_right {
+    @include floatbox(50%, auto, right);
+    text-align: right;
+  }
+}

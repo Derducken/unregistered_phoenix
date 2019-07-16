@@ -1,0 +1,421 @@
+#header {
+  @include tbback(0.8);
+  @include floatbox(100%, auto);
+  z-index: 10;
+  //overflow: hidden;
+
+  #site_id {
+    @include floatbox(25%, 50px);
+    @include wminmax(250px, 300px);
+
+    a {
+      @include absobox;
+      /*img {}*/
+      #site_logo,
+      h1 {
+        @include flpr;
+      }
+      /*#site_logo {}*/
+      h1 {
+        @include acceler8;
+        @include flpr;
+        @include tcfront (0.25);
+        margin: 0;
+        padding: 8px 5px 2px;
+        transition: padding 0.5s, color 0.5s;
+      }
+
+      &:hover {
+        h1 {
+          color: $cfront;
+          padding: 2px 5px 8px;
+        }
+      }
+    }
+  }
+
+  #top_menu {
+    @include frpr;
+
+    ul {
+      @include mpz;
+      list-style: none;
+
+      li {
+        @include acceler8;
+        @include mpz;
+        @include floatbox(75px, 35px);
+        @include box-shadow(-3px, 2px, 5px, 0, transparentize($cfront, 0.5), true);
+        transition: color, background-color, 0.5s;
+        //overflow: hidden;
+        text-decoration: none;
+        /*.social {}*/
+        a {
+          @include acceler8;
+          @include border-radius(0, 0, 0, 0);
+          display: block;
+          transition: color, background-color, opacity, 0.3s;
+          color: transparentize($cback, .5);
+          font-size: 2em;
+          line-height: 1.1em;
+          text-align: center;
+          text-decoration: none;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 100%;
+          opacity: 0.2;
+
+          &:hover {
+            color: $cback;
+            opacity: 1;
+          }
+        }
+
+        a[href="http://facebook.com"] {
+          background-color: transparentize(desaturate(rgb(58, 87, 149), 25%), .5);
+          background-image: url(img/svg_icons/iconmonstr-facebook-icon-w.svg);
+
+
+          &:hover {
+            background-color: rgb(58, 87, 149);
+          }
+        }
+
+        a[href="http://twitter.com"] {
+          background-color: transparentize(desaturate(rgb(85, 172, 238), 25%), .5);
+          background-image: url(img/svg_icons/iconmonstr-twitter-icon-w.svg);
+
+          &:hover {
+            background-color: rgb(85, 172, 238);
+          }
+
+        }
+
+        a[href="http://this_sites.com/RSS/"] {
+          background-color: transparentize(desaturate(rgb(251, 118, 41), 25%), .5);
+          background-image: url(img/svg_icons/iconmonstr-rss-icon-w.svg);
+
+          &:hover {
+            background-color: rgb(251, 118, 41);
+          }
+        }
+
+        a[href="mailto:"] {
+          background-color: transparentize(desaturate(rgb(219, 86, 73), 75%), .5);
+          background-image: url(img/svg_icons/iconmonstr-email-2-icon-w.svg);
+
+          &:hover {
+            background-color: rgb(219, 86, 73);
+          }
+        }
+
+        &:first-child {
+          @include border-radius(0, 0, 0, 10px);
+        }
+      }
+    }
+  }
+
+  #searchform {
+    @include box-shadow(-3px, 2px, 5px, 0, transparentize($cfront, 0.7), true);
+    @include frpr;
+    @include tbfront(0.9);
+    @include combined-radius(0,0,10px,10px);
+    padding: 0 2px;
+    margin-right: 10px;
+    label.screen-reader-text {
+      display: none;
+    }
+    input#s {
+      @include flpr;
+      @include tcfront(0.9);
+      @include tbback(0.9);
+      @include combined-radius(0,0,0,7px);
+      width: 2px;
+      height: 30px;
+      margin: 1px 0 2px;
+      padding: 1px 5px;
+      border: none;
+      font-size: 1.1em;
+      transition: width 0.3s, background 0.4s, color 0.5s;
+      z-index: 5;
+
+    }
+    input#searchsubmit {
+      @include frpr;
+      @include tcfront(0.7);
+      @include tbback(0.9);
+      @include combined-radius(0,0,7px,0);
+      width: 50px;
+      height: 32px;
+      margin: 1px 0 2px;
+      padding: 1px;
+      border: none;
+      transition: width 0.4s, background 0.5s, color 0.6s;
+      z-index: 6;
+      //width: 28px;
+      //height: 28px;
+      //border: solid 1px transparentize($cfront,0.3);
+    }
+  }
+
+  #site_menu {
+    @include tbfront(0.5);
+    position: relative;
+    margin-top: 5px;
+    clear: both;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+
+    //border-top: solid 2px transparentize($cfront,0.7);
+    #hubs_menu,
+    #main_menu {
+      @include flpr;
+      //overflow: hidden;
+
+      ol,
+      ul {
+        @include mpz;
+        list-style: none;
+      }
+
+    }
+
+    #main_menu {
+      @include flpr;
+      @include tbfront(0.8);
+      width: 100%;
+      z-index: 10;
+      clear: both;
+/*
+      height: 50px;
+
+      &:hover {
+        height: auto;
+      }
+*/
+      .menu-main-menu-container {
+        @include flpr;
+        > ul {
+          &:after {
+            content: "";
+            display: block;
+            clear: both;
+          }
+
+          > li {
+            float: left;
+            transition-duration: 0.2s;
+
+            > a {
+              @include acceler8;
+              @include border-radius (0, 0, 10px, 10px);
+              @include box-shadow(-3px, 0, 5px, 0,  transparentize($cfront, 0.8), true);
+              @include tbfront(0.9);
+              @include tcback(0.5);
+              text-decoration: none;
+              display: block;
+              font-size: 16px;
+              line-height: 35px;
+              padding: 4px 6px;
+              margin: 0 2px 1px;
+              transition-property: color, background-color, border, border-radius;
+              transition-duration: 0.5s;
+              border-top: 1px solid transparentize($cfront, .2);
+              border-bottom: 1px solid transparentize($cfront, .2);
+
+              &:hover {
+                background-color: $cback;
+                color: $cfront;
+                border-top: 1px solid transparentize($cfront, .9);
+                border-bottom: 1px solid transparentize($cfront, .65);
+                transition-duration: 0.2s;
+              }
+            }
+
+            &.page_item_has_children {
+              > ul {
+                @include combined-radius(0,0,7px,7px);
+                @include box-shadow(5px, 5px, 10px, 0, transparentize($cfront, 0.5), false);
+                border: solid 2px rgba(0,0,0,0);
+                border-top: none;
+                height: 0;
+                position: absolute;
+                margin-top: 1px;
+                opacity: 0;
+                transition: opacity 0.5s;
+                > li {
+                  display: none;
+                  > a {
+                    @include border-radius (0, 0, 0, 0);
+                  }
+                  &:last-child {
+                    a {
+                      @include combined-radius(0,0,5px,5px);
+                    }
+                  }
+                }
+              }
+              &:hover {
+                a {
+                  @include border-radius (0, 0, 0, 0);
+                }
+                > ul {
+                  border: solid 2px rgba(0,0,0,0.5);
+                  border-top: none;
+                  height: auto;
+                  opacity: 1;
+                  transition: opacity 0.5s;
+                  > li {
+                    display: block;
+                    > a {
+                      color: rgba(0,0,0,0.7);
+                      text-decoration: none;
+                      display: block;
+                      padding: 10px;
+                      border-bottom: solid 1px rgba(0,0,0,0.2);
+                      background: rgba(255,255,255,0.9);
+                    }
+                  &:hover a {
+                    background: rgba(0,0,0,0.9);
+                    color: rgba(255,255,255,0.7);
+                  }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #hubs_menu {
+      @include acceler8;
+      @include flpr;
+      width: 100%;
+      height: 10px;
+      transition-property: height;
+      transition-duration: 0.5s;
+      overflow: hidden;
+      z-index: 9;
+
+      ul {
+        @include floatbox;
+
+        li {
+          @include floatbox(10%);
+          display: block;
+
+          h3 {
+            @include acceler8;
+            @include absobox(100%, auto);
+            @include tbfront(0.85);
+            @include tcback(0.95);
+            bottom: 0;
+            margin: 0;
+            padding: 2px;
+            font-size: 12px;
+            line-height: 12px;
+            transition-property: color, background-color;
+            transition-duration: 0.5s;
+            z-index: 5;
+          }
+
+          a {
+            @include acceler8;
+            @include absobox;
+            @include box-shadow(-5px, 0, 5px, 0, transparentize($cfront, 0.5), true);
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transition-property: box-shadow;
+            transition-duration: 0.2s;
+          }
+
+          img {
+            @include absobox(100%, 100%);
+            object-fit: cover;
+            z-index: 1;
+            margin-top: -5px;
+            transition: margin 0.4s;
+          }
+
+          &:hover {
+            h3 {
+              @include tcback(0.1);
+              @include tbfront(0.3);
+            }
+
+            a {
+              @include box-shadow(-25px, 0, 15px, 0, transparentize($cback, 0.5), true);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    #site_menu {
+      @include tbfront(0.1);
+
+      #main_menu {
+        .menu-main-menu-container {
+          > ul {
+            > li {
+              > a {
+                @include tcback(0);
+
+                &:hover {
+                  @include tcfront(0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #site_menu #hubs_menu {
+      height: 110px;
+      ul {
+        li {
+          img {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    #searchform {
+      @include tbfront(0.6);
+
+      input#s {
+        @include box-shadow(-3px, 0, 5px, 0, transparentize($cfront, 0.8), true);
+        @include tcfront(0.6);
+        @include tbback(0.6);
+        width: 200px;
+
+        &:focus {
+          @include box-shadow(-2px, 0, 3px, 0, transparentize($cfront, 0.6), true);
+          @include tcfront(0.4);
+          @include tbback(0.25);
+          width: 500px;
+        }
+      }
+
+      input#searchsubmit {
+        @include tbback(0.1);
+        @include tcfront(0.1);
+          position: relative;
+          width: 80px;
+      }
+    }
+  }
+}

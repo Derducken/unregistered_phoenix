@@ -1,0 +1,236 @@
+#postbox {
+  &.fade-in {
+    animation-delay: 0.5s;
+  }
+  @include combined-radius(25px, 25px, 25px, 25px);
+  @include tbfront(0.4);
+  margin: 0 auto 10px;
+  width: 98%;
+  padding: 0.5%;
+  overflow: hidden;
+  position: relative;
+
+  .post {
+    &:nth-child(odd).fade-in {
+      animation-delay: 1.5s;
+    }
+    &:nth-child(even).fade-in {
+      animation-delay: 1.7s;
+    }
+    @include combined-radius(10px, 10px, 10px, 10px);
+    @include flpr;
+    width: 19%;
+    margin: 0.5%;
+    height: 250px;
+    overflow: hidden;
+
+    > .postlink {
+      @include absobox;
+      @include mpz;
+      @include box-shadow(0, 0, 10px, 0, transparentize($cfront, 0.4), true);
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    h3 {
+      position: absolute;
+      z-index: 3;
+      margin: 0;
+      padding: 2%;
+      width: 96%;
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+      transition: bottom, 0.3s;
+      font-size: 1em;
+      line-height: 1.4em;
+      font-weight: medium;
+    }
+    /*p {}*/
+    /*.post_title {}*/
+
+    p {
+      display: none;
+
+      &:first-of-type {
+        @include tbfront(1);
+        @include tcback(1);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 92%;
+        height: 92%;
+        padding: 4%;
+        margin: 0;
+        font-size: 1.1em;
+        line-height: 1.7em;
+        font-weight: normal;
+        z-index: 2;
+        transition: color 0.2s, background 0.4s;
+      }
+    }
+
+
+    .categories {
+      @include mpz;
+      @include placebox(0,0,auto,auto,100%,auto);
+      z-index: 5;
+      transition: top 0.3s;
+
+      ul {
+        @include mpz;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          float: right;
+          margin-left: 2px;
+          padding: 1% 2%;
+          background: transparentize($cfront,0.6);
+          border-left: solid 1px transparentize($cfront,0.6);
+          border-bottom: solid 1px transparentize($cfront,0.6);
+
+          &:last-child {
+            @include combined-radius(0,0,0,10px);
+          }
+        }
+      }
+
+      .post_category {}
+    }
+
+    .imgplane, .catbox {
+      @include acceler8;
+      @include absobox;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition-property: opacity;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .imgplane {
+      background-size: cover;
+      z-index: 2;
+      opacity: 1;
+      transition-duration: 0.35s;
+    }
+    .catbox {
+      background-size: contain;
+      z-index: 1;
+      opacity: 1;
+      transition-duration: 0.5s;
+    }
+
+    &.category-opinions {
+      .catbox {
+        background-color: $cCategory1;
+        background-image: $iCategory1;
+      }
+    }
+    &.category-featured {
+      .catbox {
+        background-color: $cCategory2;
+        background-image: $iCategory2;
+      }
+    }
+    &.category-apps-software {
+      .catbox {
+        background-color: $cCategory3;
+        background-image: $iCategory3;
+      }
+    }
+    &.category-gadgets {
+      .catbox {
+        background-color: $cCategory4;
+        background-image: $iCategory4;
+      }
+    }
+    &.category-gaming {
+      .catbox {
+        background-color: $cCategory5;
+        background-image: $iCategory5;
+      }
+    }
+    &.category-geek-life {
+      .catbox {
+        background-color: $cCategory6;
+        background-image: $iCategory6;
+      }
+    }
+    &.category-general {
+      .catbox {
+        background-color: $cCategory7;
+        background-image: $iCategory7;
+      }
+    }
+    &.category-tweets {
+      .catbox {
+        background-color: $cCategory8;
+        background-image: $iCategory8;
+      }
+    }
+    &.category-web {
+      .catbox {
+        background-color: $cCategory9;
+        background-image: $iCategory9;
+      }
+    }
+    &.category-opinions {
+      .catbox {
+        background-color: $cCategory10;
+        background-image: $iCategory10;
+      }
+    }
+    &.category-sci-tech {
+      .catbox {
+        background-color: $cCategory11;
+        background-image: $iCategory11;
+      }
+    }
+    &.category-computers {
+      .catbox {
+        background-color: $cCategory12;
+        background-image: $iCategory12;
+      }
+    }
+    &.category-timeout {
+      .catbox {
+        background-color: $cCategory13;
+        background-image: $iCategory13;
+      }
+    }
+
+    /*.index_post_image {}*/
+    &:hover {
+      p:first-of-type {
+        @include tbfront(0.1);
+        @include tcback(0.1);
+      }
+      h3 {
+        bottom: -30%;
+      }
+      .categories {
+        top: -30%;
+      }
+
+      .imgplane {
+        opacity: 0.2;
+      }
+
+      .catbox {
+        opacity: 0.6;
+      }
+    }
+  }
+}

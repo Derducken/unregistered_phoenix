@@ -97,6 +97,8 @@ The default "test" images are from Pexels. Specifically (and since I like acknow
 
 ## Version Changes
 
+### 0.004: Since (my) Atom's Live Reload plugin seems to only work with the "index" page in a project's folder, and the main index page is almost ready, I renamed it to work on the Single pages. Aaaand they're almost ready.
+
 ### 0.003:
 Design for the first page is almost fully done, effects and all. While at it, I "modularized" the SCSS code, so theming the rest of the pages should be quite simpler and a-lot faster.
 

@@ -1,0 +1,51 @@
+/*
+Theme Name: Core Phoenix
+Theme URI: https://github.com/Derducken/unregistered_phoenix
+Author: Odysseas Kourafalos (aka: Ducklord)
+Author URI: http://unregistered.gr
+Description: The Ultimate "magazine theme", responsive, fluid, easily customizable and extendable. I studied Graphic Design but worked for decades as a writer for tech mags. Then, jumped to the vast web. This combination allows me to create a theme that combines the best of all those worlds - nice design *and* easy to manage "as a writer" *and* easy to customize and extend as a web designer/dev. Enjoy!
+Version: 0.005
+License: Didn't have time to think about this - yet. What would a "feel free to do whatever you want, but point back towards the original code and me - and if you somehow end up making megabucks with this, drop me a dime" be in the world of licenses?
+License URI: Er... Ehm...
+Tags: transparent, flexible-width, magazine
+Text Domain: corephoenix
+
+*/
+/*Imports:*/
+/*______________________________________________________________________________*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); //@import "mixins";
+//@import "testing";
+@import "css/mixins.scss";
+@import "css/testing.scss";
+@import "css/Core_hacks-fixes"; /*Main:*/
+/*______________________________________________________________________________*/
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: $cfront;
+  background-color: $cback;
+  font-family: $main_font;
+  @include mpz;
+
+  #bgbox {
+    @include fixedbg;
+    @include fixbox;
+  }
+  /*Main Theme's Rules:*/
+  #core_fullbox {
+    @include clearfix;
+    @include mpz;
+    @include floatbox(100%, auto);
+    @import "css/core_header";
+    @import "css/core_slideshow";
+    @import "css/core_sidebar";
+    @import "css/core_footer";
+
+    #mainsite {
+      @include floatbox(100%, auto);
+      @import "css/core_index_posts";
+      @import "css/Core_Single_Posts";
+    }
+  }
+}
